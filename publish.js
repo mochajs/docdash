@@ -243,7 +243,13 @@ function generate(type, title, docs, filename, resolveLinks) {
     if (resolveLinks) {
         html = helper.resolveLinks(html); // turn {@link foo} into <a href="foodoc.html">foo</a>
     }
+    if (filename !== 'index.html') {
+        html = `---
+permalink: "api/{{page.fileSlug}}.html"
+---
 
+` + html;
+    }
     fs.writeFileSync(outpath, html, 'utf8');
 }
 
@@ -315,7 +321,7 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
 
     if (items && items.length) {
         var itemsNav = '';
-        var docdash = env && env.conf && (env.conf.mochaDocdash || env.conf.docdash || {});
+        var docdash = env && env.conf && (env.conf['mocha-docdash'] || env.conf.docdash || {});
         var level = typeof docdash.navLevel === 'number' && docdash.navLevel >= 0 ?
             docdash.navLevel :
             Infinity;
@@ -749,9 +755,15 @@ exports.publish = function(taffyData, opts, tutorials) {
 
         var tutorialPath = path.join(outdir, filename);
         var html = view.render('tutorial.tmpl', tutorialData);
-
         // yes, you can use {@link} in tutorials too!
         html = helper.resolveLinks(html); // turn {@link foo} into <a href="foodoc.html">foo</a>
+        if (filename !== 'index.html') {
+            html = `---
+permalink: "api/{{page.fileSlug}}.html"
+---
+
+` + html;
+        }
         fs.writeFileSync(tutorialPath, html, 'utf8');
     }
 
