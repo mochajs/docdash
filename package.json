@@ -2,43 +2,66 @@
   "name": "@mocha/docdash",
   "version": "3.0.0",
   "description": "A JSDoc template for Mocha, forked from docdash",
-  "main": "publish.js",
-  "scripts": {
-    "test": "jsdoc -c fixtures/fixtures.conf.json",
-    "sync": "browser-sync start -s fixtures-doc -f fixtures-doc --reload-delay 1000 --no-ui --no-notify",
-    "watch": "watch-run -d 1000 -p tmpl/**,static/** \"npm run test\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mochajs/mocha-docdash.git"
-  },
-  "devDependencies": {
-    "jsdoc": "latest",
-    "browser-sync": "latest",
-    "watch-run": "latest"
-  },
-  "author": "Clement Moron <clement.moron@gmail.com>",
-  "contributors": [
-    "Peter Müller <munter@fumle.dk>",
-    "Christopher Hiller <boneskull@boneskull.com>"
-  ],
-  "license": "Apache-2.0",
   "keywords": [
     "jsdoc",
     "template"
   ],
-  "publishConfig": {
-    "access": "public"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mochajs/mocha-docdash.git"
   },
+  "license": "Apache-2.0",
+  "author": "Clement Moron <clement.moron@gmail.com>",
+  "contributors": [
+    "Peter Müller <munter@fumle.dk>",
+    "Christopher Hiller <boneskull@boneskull.com>",
+    "Craig Taub <craigtaub@googlemail.com>"
+  ],
+  "main": "publish.js",
   "files": [
     "publish.js",
     "static",
     "tmpl"
   ],
-  "peerDependencies": {
-    "jsdoc": "*"
+  "scripts": {
+    "sync": "browser-sync start -s fixtures-doc -f fixtures-doc --reload-delay 1000 --no-ui --no-notify",
+    "test": "jsdoc -c fixtures/fixtures.conf.json",
+    "watch": "watch-run -d 1000 -p \"tmpl/**,static/**\" \"npm run test\""
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "endOfLine": "auto",
+    "singleQuote": true
   },
   "dependencies": {
     "taffydb": "^2.7.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.10",
+    "husky": "^4.2.5",
+    "jsdoc": "^3.0.0",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "watch-run": "^1.2.5"
+  },
+  "peerDependencies": {
+    "jsdoc": "^3.0.0",
+    "@11ty/eleventy": "^0.10.0"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{md,html,css,js,json}": [
+      "prettier --write"
+    ]
   }
 }
