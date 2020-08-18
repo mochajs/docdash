@@ -661,6 +661,11 @@ html[data-search-mode] .level-hide {
     margin: 1em 0;
   }
 
+  #main h4.name {
+    padding: .75em 10px .75em 10px;
+    word-break: break-word;
+  }
+
   #main section {
     padding: 0;
   }
