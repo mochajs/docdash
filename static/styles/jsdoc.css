@@ -95,7 +95,7 @@ h4.name {
   border-top: 1px solid #d3d3d3;
   border-bottom: 1px solid #d3d3d3;
   margin: 1.5em 0 0.5em;
-  padding: .75em 0 .75em 10px;
+  padding: .75em 10px;
 }
 
 h4.name a {
@@ -662,7 +662,6 @@ html[data-search-mode] .level-hide {
   }
 
   #main h4.name {
-    padding: .75em 10px .75em 10px;
     word-break: break-word;
   }
 
