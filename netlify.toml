@@ -1,0 +1,8 @@
+[build]
+command = "./deploy.sh"
+publish = "mocha/docs/_site/"
+
+[build.environment]
+DEBUG = "mocha:docs*"
+NODE_VERSION = "12"
+RUBY_VERSION = "2.7.1"
