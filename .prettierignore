@@ -1,0 +1,5 @@
+static/scripts/jquery*
+static/scripts/prettify/*
+LICENSE.md
+package.json
+package-lock.json

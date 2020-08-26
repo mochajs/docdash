@@ -1,56 +1,53 @@
 {
-    "tags": {
-        "allowUnknownTags": true
-    },
-    "source": {
-        "include": [
-            "fixtures/",
-            "./README.md"
-        ]
-    },
-    "plugins": ["plugins/markdown"],
-    "opts": {
-        "encoding": "utf8",
-        "template": "./",
-        "destination": "./fixtures-doc/",
-        "recurse": true,
-        "verbose": true
-    },
-    "markdown": {
-        "parser": "gfm",
-        "hardwrap": true,
-        "idInHeadings": true
-    },
-    "templates": {
-        "cleverLinks": false,
-        "monospaceLinks": false,
-        "default": {
-            "outputSourceFiles": true,
-            "includeDate": false,
-            "useLongnameInNav": true
-        }
-    },
-    "mocha-docdash": {
-        "static": false,
-        "sort": true,
-        "disqus": "",
-		"meta": {
-			"title": "Docdash",
-			"description": "A clean, responsive documentation template theme for JSDoc 3.",
-			"keyword": "jsdoc, docdash"
-        },
-        "search": true,
-        "collapse": true,
-        "typedefs": true,
-        "removeQuotes": "none",
-        "scripts": [],
-        "menu":{
-            "Github repo":{
-                "href":"https://github.com/mochajs/mocha-docdash",
-                "target":"_blank",
-                "class":"menu-item",
-                "id":"repository"
-            }
-        }
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "source": {
+    "include": ["fixtures/", "./README.md"]
+  },
+  "plugins": ["plugins/markdown"],
+  "opts": {
+    "encoding": "utf8",
+    "template": "./",
+    "destination": "./fixtures-doc/",
+    "recurse": true,
+    "verbose": true
+  },
+  "markdown": {
+    "parser": "gfm",
+    "hardwrap": true,
+    "idInHeadings": true
+  },
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "default": {
+      "outputSourceFiles": true,
+      "includeDate": false,
+      "useLongnameInNav": true
     }
+  },
+  "mocha-docdash": {
+    "static": false,
+    "sort": true,
+    "disqus": "",
+    "meta": {
+      "title": "Docdash",
+      "description": "A clean, responsive documentation template theme for JSDoc 3.",
+      "keyword": "jsdoc, docdash"
+    },
+    "search": true,
+    "collapse": true,
+    "typedefs": true,
+    "removeQuotes": "none",
+    "scripts": [],
+    "menu": {
+      "Github repo": {
+        "href": "https://github.com/mochajs/mocha-docdash",
+        "target": "_blank",
+        "class": "menu-item",
+        "id": "repository"
+      }
+    }
+  }
 }
